@@ -621,7 +621,7 @@ uintmax_t p00_abs_signed(intmax_t p00_a) {
   /* The minus is taken on the unsigned value, so it gives the
      correct result with -INTMAX_MAX, namely INTMAX_MAX, which might
      not be representable for two's complement representation. */
-  return (p00_a < INTMAX_C(0)) ? -p00_aa : p00_a;
+  return (p00_a < 0) ? -p00_aa : p00_a;
 }
 
 /**

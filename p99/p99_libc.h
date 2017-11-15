@@ -118,6 +118,7 @@
 #  define p00_has_feature_stdlib_h 1
 #  define p00_has_feature_string_h 1
 /* tgmath.h should be given on the compiler level */
+#undef p00_has_feature_tgmath_h
 #  define p00_has_feature_tgmath_h 0
 #  define p00_has_feature_time_h 1
 #  define p00_has_feature_wchar_h 0

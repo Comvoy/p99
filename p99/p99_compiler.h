@@ -1072,7 +1072,9 @@ P99_IF_COMPILER(INTEL, warning(disable: 283))  /* duplicate specifier in declara
 
 P99_IF_COMPILER(GNU, GCC diagnostic ignored "-Wmissing-braces")
 P99_IF_COMPILER(GNU, GCC diagnostic ignored "-Wmissing-field-initializers")
+#ifndef __XC16
 P99_IF_COMPILER(GNU, GCC diagnostic ignored "-Wswitch-bool")
+#endif
 
 P99_IF_COMPILER(OPEN64, GCC diagnostic ignored "-Wmissing-braces")
 P99_IF_COMPILER(OPEN64, GCC diagnostic ignored "-Wmissing-field-initializers")
@@ -1126,7 +1128,7 @@ P99_PRAGMA(GCC diagnostic ignored "-Winitializer-overrides")
  ** features. Otherwise this just ignored
  **/
 
-#if P99_COMPILER & (P99_COMPILER_GNU | P99_COMPILER_CLANG)
+#if P99_COMPILER & (P99_COMPILER_GNU | P99_COMPILER_CLANG) & !__XC16
 #define P99_WARN_REDUNDANT_DECLS_PUSH                          \
 P99_PRAGMA(GCC diagnostic push)                                \
 P99_PRAGMA(GCC diagnostic ignored "-Wredundant-decls")

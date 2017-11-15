@@ -1440,6 +1440,7 @@
     #include "p99_choice.h"
 #else
     #define P99_CHOICE_H
+    #define UINTMAX_C(x) ((uintmax_t) x)
     #include "p99_id.h"
     #include "p99_for.h"
 #endif
